@@ -1,5 +1,4 @@
 # Base Box Testing
---
 Placeholder for testing information!
 ## Running the Tests
 ```
