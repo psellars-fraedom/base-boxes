@@ -1,0 +1,11 @@
+{
+  "name": "fraedom/dev-box",
+  "description": "Fraedom Developer Base Box",
+  "versions": [{
+    "version": "0.1.0",
+    "providers": [{
+      "name": "virtualbox",
+      "url": "../box/virtualbox/win81x64-enterprise-chef-0.1.0.box"
+    }]
+  }]
+}
