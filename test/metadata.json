@@ -5,7 +5,9 @@
     "version": "0.1.0",
     "providers": [{
       "name": "virtualbox",
-      "url": "../box/virtualbox/win81x64-enterprise-chef-0.1.0.box"
+      "url": "../box/virtualbox/win81x64-enterprise-chef-0.1.0.box",
+      "checksum_type": "sha1",
+      "checksum": "e651f0a5d8453e66c0c2a7f3d20a59349a3be19c"
     }]
   }]
 }
