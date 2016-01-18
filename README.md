@@ -24,7 +24,7 @@ If you have any of these installed at this time and don't want to install these 
 
 ### Download An Appropriate ISO
 
-Details of ISO requirements can be found [here](iso/README.md) including download instructions. For this Quick Start download the Windows 8.1 Enterprise with Updates (x64) ISO using the direct download link.
+Details of ISO requirements can be found [here](iso/README.md) including download instructions. For this Quick Start download the Windows 8.1 Enterprise with Updates (x64) ISO from the shared Development drive folder located at `U:/Dev Environment/MSDN/Windows 8.1/`.--using the direct download link--.
 
 ### Build Your First Base Box
 
@@ -58,5 +58,4 @@ This will provide a Vagrantfile that will delegate all control to the Vagrantfil
 * Provide a pipeline template for automated build, import and initialization of boxes
 * Document how to change the Chocolatey version checked for and installed
 * Document how to change the init.bat script to install different versions of the Software Dependencies
-* Provide an internal ISO storage for simpler ISO discovery and download
 * Update box build scripts to install from internal repository (at this time external downloads)
