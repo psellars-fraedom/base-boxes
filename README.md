@@ -30,7 +30,7 @@ Details of ISO requirements can be found [here](iso/README.md) including downloa
 
 Once you have an appropriate ISO downloaded to the [iso](iso) folder you are ready to build your first box.
 
-    PACKER_LOG=1 packer build -force -machine-readable win81x86-enterprise.json
+    PACKER_LOG=1 packer build -force -machine-readable win81x64-enterprise.json
 
 This will start the build of your base box. Once this is complete a box file will appear in your box folder.
 
