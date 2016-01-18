@@ -6,7 +6,7 @@ Useful Base Box creation capabilities using Packer for Fraedom contributors
 The following dependencies need to be installed on the machine used to build the base boxes. At this time VirtualBox does not support nested virtualization so the recommended way to build boxes is to have these installed on bare metal. The versions in brackets below are those that have been tested at this time. That is not to say other versions will not work, but at this time we are not supporting other versions.
 
 * [Packer](https://www.packer.io/)  (0.8.6)
-* [VirtualBox](https://www.virtualbox.org/) (5.0.10-104061)
+* [VirtualBox](https://www.virtualbox.org/) (5.0.10 r104061)
 * [Vagrant](https://www.vagrantup.com/) (1.7.4)
 
 These dependencies can be installed using [Chocolatey](https://chocolatey.org/). The [init.bat](init.bat) script will install the latest version if none is found on the machine it is run on.
@@ -17,14 +17,14 @@ These dependencies can be installed using [Chocolatey](https://chocolatey.org/).
 The quickest way to install the dependencies is to run the [init.bat](init.bat) script. This will use [Chocolatey](https://chocolatey.org/) to install the Software Dependencies. It will install the following versions of the Software Dependencies at this time using Chocolatey.
 
 * [Packer](https://www.packer.io/)  (0.8.6)
-* [VirtualBox](https://www.virtualbox.org/) (5.0.10-104061)
+* [VirtualBox](https://www.virtualbox.org/) (5.0.10 r104061)
 * [Vagrant](https://www.vagrantup.com/) (1.7.4)
 
 If you have any of these installed at this time and don't want to install these versions then you should edit the [init.bat](init.bat) script before running it.
 
 ### Download An Appropriate ISO
 
-Details of ISO requirements can be found [here](iso/README.md) including download instructions. For this Quick Start download the Windows 8.1 Enterprise with Updates (x64) ISO from the shared Development drive folder located at `U:/Dev Environment/MSDN/Windows 8.1/`.--using the direct download link--.
+Details of ISO requirements can be found [here](iso/README.md) including download instructions. For this Quick Start download the Windows 8.1 Enterprise with Updates (x64) ISO from the shared Development drive folder located at `U:/Dev Environment/MSDN/Windows 8.1/`. ~~using the direct download link~~.
 
 ### Build Your First Base Box
 
@@ -55,6 +55,8 @@ This will provide a Vagrantfile that will delegate all control to the Vagrantfil
     vagrant up
 
 ### TO-DO
+* Implement Hyper-V build provisioner
+* Quick Start - In Git Bash/Powershell are different....Document appropriately
 * Provide a pipeline template for automated build, import and initialization of boxes
 * Document how to change the Chocolatey version checked for and installed
 * Document how to change the init.bat script to install different versions of the Software Dependencies
