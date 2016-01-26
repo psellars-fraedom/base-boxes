@@ -22,4 +22,8 @@ Vagrant.configure("2") do |config|
     v.customize ["setextradata", :id, "CustomVideoMode1", "1024x768x32"]
   end
 
+  config.vm.provider :hyperv do  |hv, override|
+    hv.ip_address_timeout = 240
+  end
+
 end

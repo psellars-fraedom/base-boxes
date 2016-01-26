@@ -2,5 +2,9 @@
 packer_cache/
 output-*
 *.box
+*.tar
 /iso/*
+/hyper-v-output/*
+!/hyper-v-output/Virtual Machines/vm.xml
+!/hyper-v-output/metadata.json
 !/iso/README.md
