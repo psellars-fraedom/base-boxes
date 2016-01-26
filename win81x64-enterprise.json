@@ -82,7 +82,7 @@
     "cm": "chef",
     "cm_version": "",
     "disk_size": "40960",
-    "headless": "false",
+    "headless": "true",
     "iso_checksum": "B7DD748446D89B9449A160CDC24BD282989BBD96",
     "iso_url": "iso/en_windows_8.1_enterprise_with_update_x64_dvd_6054382.iso",
     "metadata_json": "template/metadata/fraedom-developer/metadata.json",

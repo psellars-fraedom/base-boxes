@@ -1,5 +1,7 @@
 # Base Boxes
-Useful Base Box creation capabilities using Packer for Fraedom contributors
+Useful base box creation capabilities using Packer for Fraedom contributors. At this time base boxes can be created for use with [Vagrant](https://www.vagrantup.com/) on [VirtualBox](https://www.virtualbox.org/) and [Hyper-V](https://technet.microsoft.com/en-us/library/mt169373.aspx) use. The main purpose of these base boxes is to enable rapid development on a local environment. These boxes will be orchestrated along with provisioning pipelines to create useful local environments. Fraedom default security, box hardening and standard environment applications should be added at this level in the infrastructure pipeline.
+
+This repository favours [VirtualBox](https://www.virtualbox.org/) for building base boxes due to [Packer](https://www.packer.io/) not supporting [Hyper-V](https://technet.microsoft.com/en-us/library/mt169373.aspx) out of the box. 
 
 ## Software Dependencies
 
@@ -8,6 +10,7 @@ The following dependencies need to be installed on the machine used to build the
 * [Packer](https://www.packer.io/)  (0.8.6)
 * [VirtualBox](https://www.virtualbox.org/) (5.0.10 r104061)
 * [Vagrant](https://www.vagrantup.com/) (1.7.4)
+* [psake](https://github.com/psake/psake) (4.4.2)
 
 These dependencies can be installed using [Chocolatey](https://chocolatey.org/). The [init.bat](init.bat) script will install the latest version if none is found on the machine it is run on.
 
@@ -19,6 +22,7 @@ The quickest way to install the dependencies is to run the [init.bat](init.bat) 
 * [Packer](https://www.packer.io/)  (0.8.6)
 * [VirtualBox](https://www.virtualbox.org/) (5.0.10 r104061)
 * [Vagrant](https://www.vagrantup.com/) (1.7.4)
+* [psake](https://github.com/psake/psake) (4.4.2)
 
 If you have any of these installed at this time and don't want to install these versions then you should edit the [init.bat](init.bat) script before running it.
 
@@ -53,8 +57,12 @@ Now you have a box ready for use by vagrant. In the directory you would like to 
 This will provide a Vagrantfile that will delegate all control to the Vagrantfile baked into the box at build time. Now to run the machine:
 
     vagrant up
+    
+## Packer and Hyper-V
 
-### TO-DO
+At this time Packer does not have a supported Hyper-V builder. A [pull request](https://github.com/mitchellh/packer/pull/2576) exists to introduce this capability. Until it is merged the recommendation from Mitchell Hashimoto (Creator of Packer) is to [pull the PR and compile it into a Packer release](https://github.com/mitchellh/packer/pull/2576#issuecomment-151258069). During testing for this repository this method did not prove successful so an alternative implementation for Hyper-V was implemented at this time. It is recommended that once the Hyper-V builder becomes available in the general Packer release package that this repository is refactored to utilise this method.
+
+## TO-DO
 * Implement Hyper-V build provisioner
 * Quick Start - In Git Bash/Powershell are different....Document appropriately
 * Provide a pipeline template for automated build, import and initialization of boxes
