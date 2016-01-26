@@ -16,6 +16,16 @@ These dependencies can be installed using [Chocolatey](https://chocolatey.org/).
 
 ## Quick Start
 
+For more detailed information see the full documentation....
+
+#### Using Powershell
+
+TODO: Add this information
+
+#### Using Git Bash/Posh Git
+
+TODO: Add this information
+
 ### Install Software Dependencies
 The quickest way to install the dependencies is to run the [init.bat](init.bat) script. This will use [Chocolatey](https://chocolatey.org/) to install the Software Dependencies. It will install the following versions of the Software Dependencies at this time using Chocolatey.
 
@@ -60,12 +70,14 @@ This will provide a Vagrantfile that will delegate all control to the Vagrantfil
     
 ## Packer and Hyper-V
 
-At this time Packer does not have a supported Hyper-V builder. A [pull request](https://github.com/mitchellh/packer/pull/2576) exists to introduce this capability. Until it is merged the recommendation from Mitchell Hashimoto (Creator of Packer) is to [pull the PR and compile it into a Packer release](https://github.com/mitchellh/packer/pull/2576#issuecomment-151258069). During testing for this repository this method did not prove successful so an alternative implementation for Hyper-V was implemented at this time. It is recommended that once the Hyper-V builder becomes available in the general Packer release package that this repository is refactored to utilise this method.
+At this time Packer does not have a supported Hyper-V builder. A [pull request](https://github.com/mitchellh/packer/pull/2576) exists to introduce this capability. Until it is merged the recommendation from Mitchell Hashimoto (Creator of Packer) is to [pull the PR and compile it into a Packer release](https://github.com/mitchellh/packer/pull/2576#issuecomment-151258069). During testing of this repository the proposed method did not prove successful so an alternative implementation for Hyper-V was implemented at this time. It is recommended that once the Hyper-V builder becomes available in the general Packer release package that this repository is refactored to utilise this method.
+
+A repository exists to build Packer with the Hyper-V pull request in a [Docker](https://www.docker.com/) container [psellars-fraedom/packer-hyperv-build](https://github.com/psellars-fraedom/packer-hyperv-build) for those interested in testing this process.
 
 ## TO-DO
-* Implement Hyper-V build provisioner
 * Quick Start - In Git Bash/Powershell are different....Document appropriately
 * Provide a pipeline template for automated build, import and initialization of boxes
 * Document how to change the Chocolatey version checked for and installed
 * Document how to change the init.bat script to install different versions of the Software Dependencies
 * Update box build scripts to install from internal repository (at this time external downloads)
+* ~~Implement Hyper-V build provisioner~~ Review Hyper-V build process when Packer supports them
