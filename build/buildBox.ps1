@@ -1,4 +1,5 @@
 param (
+  [string]$baseBox,
   [string]$Action="default",
   [string]$version
 )
@@ -8,4 +9,4 @@ $psakeDir = (dir $env:ChocolateyInstall\lib\psake*)
 if ($psakeDir.length -gt 0) {
   $psakeDir = $psakeDir[-1]
 }
-."$psakeDir\tools\psake.ps1" "$here/psakeHypervBuild.ps1" $Action -ScriptPath $psakeDir\tools -parameters $PSBoundParameters
+."$psakeDir\tools\psake.ps1" "$here/psakeBuildBox.ps1" $Action -ScriptPath $psakeDir\tools -parameters $PSBoundParameters
