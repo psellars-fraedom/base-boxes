@@ -1,4 +1,5 @@
 param (
+  [string]$baseBox,
   [string]$Action="default",
   [string]$version
 )

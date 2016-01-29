@@ -6,3 +6,4 @@ REM cinst vagrant --version 1.8.1 -y
 cinst vagrant --version 1.7.4 -y
 cinst packer --version 0.8.6 -y
 cinst psake --version 4.4.2 -y
+cinst fciv --version 1.0.0.20150904 -y

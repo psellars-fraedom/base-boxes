@@ -1,6 +1,8 @@
 # Base Boxes
 Useful base box creation capabilities using Packer for Fraedom contributors. At this time base boxes can be created for use with [Vagrant](https://www.vagrantup.com/) on [VirtualBox](https://www.virtualbox.org/) and [Hyper-V](https://technet.microsoft.com/en-us/library/mt169373.aspx) use. The main purpose of these base boxes is to enable rapid development on a local environment. These boxes will be orchestrated along with provisioning pipelines to create useful local environments. Fraedom default security, box hardening and standard environment applications should be added at this level in the infrastructure pipeline.
 
+This repository is unlikely to have many contributors as most Fraedom contributors will be consumers of its output rather than direct contributors. It is intended that a CI Server will be the main user of this repository to create artifacts that downstream consumers can access. As such the expectation is that the CI build will provide [Vagrant](https://www.vagrantup.com/) boxes for consumption - at this time supporting the [VirtualBox provider](https://www.vagrantup.com/docs/virtualbox/) and [Hyper-V provider](https://www.vagrantup.com/docs/hyperv/) usage.
+
 This repository favours [VirtualBox](https://www.virtualbox.org/) for building base boxes due to [Packer](https://www.packer.io/) not supporting [Hyper-V](https://technet.microsoft.com/en-us/library/mt169373.aspx) out of the box. 
 
 ## Software Dependencies
@@ -18,16 +20,8 @@ These dependencies can be installed using [Chocolatey](https://chocolatey.org/).
 
 For more detailed information see the full documentation....
 
-#### Using Powershell
-
-TODO: Add this information
-
-#### Using Git Bash/Posh Git
-
-TODO: Add this information
-
-### Install Software Dependencies
-The quickest way to install the dependencies is to run the [init.bat](init.bat) script. This will use [Chocolatey](https://chocolatey.org/) to install the Software Dependencies. It will install the following versions of the Software Dependencies at this time using Chocolatey.
+### Ensure You Have Installed All The Software Dependencies
+The quickest way to install all the dependencies is to run the [init.bat](init.bat) script. This will use [Chocolatey](https://chocolatey.org/) to install the Software Dependencies. It will install the following versions of the Software Dependencies at this time using Chocolatey.
 
 * [Packer](https://www.packer.io/)  (0.8.6)
 * [VirtualBox](https://www.virtualbox.org/) (5.0.10 r104061)
@@ -38,7 +32,7 @@ If you have any of these installed at this time and don't want to install these 
 
 ### Download An Appropriate ISO
 
-Details of ISO requirements can be found [here](iso/README.md) including download instructions. For this Quick Start download the Windows 8.1 Enterprise with Updates (x64) ISO from the shared Development drive folder located at `U:/Dev Environment/MSDN/Windows 8.1/`. ~~using the direct download link~~.
+Details of ISO requirements can be found [here](iso/README.md) including download instructions. For this Quick Start download the Windows 8.1 Enterprise with Updates (x64) ISO from the shared Development drive folder located at `U:/Dev Environment/MSDN/Windows 8.1/`.
 
 ### Build Your First Base Box
 
@@ -68,6 +62,16 @@ This will provide a Vagrantfile that will delegate all control to the Vagrantfil
 
     vagrant up
     
+### Contributor Documentation
+
+This repository will require the maintenance of base boxes. New boxes will need to be added and defunct use case boxes removed from this repository. Contributors should consult the (TODO - Contributors file) documentation. The main contributor operations have been outlined below. In depth documentation can be found on the relevant wiki pages. 
+
+* Updating the generated box SHA values
+* Building a single box
+* Adding a new base box
+* Updating base dependencies
+* TODO ...
+    
 ## Packer and Hyper-V
 
 At this time Packer does not have a supported Hyper-V builder. A [pull request](https://github.com/mitchellh/packer/pull/2576) exists to introduce this capability. Until it is merged the recommendation from Mitchell Hashimoto (Creator of Packer) is to [pull the PR and compile it into a Packer release](https://github.com/mitchellh/packer/pull/2576#issuecomment-151258069). During testing of this repository the proposed method did not prove successful so an alternative implementation for Hyper-V was implemented at this time. It is recommended that once the Hyper-V builder becomes available in the general Packer release package that this repository is refactored to utilise this method.
@@ -75,9 +79,13 @@ At this time Packer does not have a supported Hyper-V builder. A [pull request](
 A repository exists to build Packer with the Hyper-V pull request in a [Docker](https://www.docker.com/) container [psellars-fraedom/packer-hyperv-build](https://github.com/psellars-fraedom/packer-hyperv-build) for those interested in testing this process.
 
 ## TO-DO
+* Make metadata file more appropriate to base box nature - currently represent a consumer view!
 * Quick Start - In Git Bash/Powershell are different....Document appropriately
-* Provide a pipeline template for automated build, import and initialization of boxes
+* ~~Provide a pipeline template for automated build, import and initialization of boxes~~ 
+  * Add artifact push to CI pipeline build
 * Document how to change the Chocolatey version checked for and installed
 * Document how to change the init.bat script to install different versions of the Software Dependencies
 * Update box build scripts to install from internal repository (at this time external downloads)
-* ~~Implement Hyper-V build provisioner~~ Review Hyper-V build process when Packer supports them
+* ~~Implement Hyper-V build provisioner~~ 
+  * Review Hyper-V build process when Packer supports them
+* Fail build if import box SHA check fails

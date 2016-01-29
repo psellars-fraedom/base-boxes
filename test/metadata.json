@@ -1,19 +1,23 @@
 {
-  "name": "fraedom/dev-box",
-  "description": "Fraedom Developer Base Box",
-  "versions": [{
-    "version": "0.1.0",
-    "providers": [{
-      "name": "virtualbox",
-      "url": "../box/virtualbox/win81x64-enterprise-chef-0.1.0.box",
-      "checksum_type": "sha1",
-      "checksum": "e651f0a5d8453e66c0c2a7f3d20a59349a3be19c"
-    },
-    {
-      "name": "hyperv",
-      "url": "../package-hyper-v-0.1.0.box",
-      "checksum_type": "sha1",
-      "checksum": "72cdc36fe7037cdfd864118eb4b294d8bac6c712" 
-    }]
-  }]
+    "name":  "fraedom/dev-box",
+    "description":  "Fraedom Developer Base Box",
+    "versions":  [
+                     {
+                         "version":  "0.1.0",
+                         "providers":  [
+                                           {
+                                               "name":  "virtualbox",
+                                               "url":  "../box/virtualbox/win81x64-enterprise-chef-0.1.0.box",
+                                               "checksum-type":  "sha1",
+                                               "checksum":  "HnH1LtbUeiB+vTZwTX58RsxbY3I="
+                                           },
+                                           {
+                                               "name":  "hyperv",
+                                               "url":  "../box/hyper-v/win81x64-enterprise-chef-0.1.0.box",
+                                               "checksum-type":  "sha1",
+                                               "checksum":  "x/JCv/W855kxnrkUftN64gtaXO4="
+                                           }
+                                       ]
+                     }
+                 ]
 }
