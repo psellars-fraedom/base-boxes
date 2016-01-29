@@ -1,10 +1,9 @@
 .DS_Store
 packer_cache/
-output-*
+output-virtualbox-iso
 *.box
 *.tar
 /iso/*
-/output-hyper-v/*
-!/output-hyper-v/Virtual Machines/vm.xml
-!/output-hyper-v/metadata.json
+/output-hyper-v/Vagrantfile
+/output-hyper-v/Virtual Hard Disks
 !/iso/README.md
