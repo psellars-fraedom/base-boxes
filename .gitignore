@@ -4,7 +4,7 @@ output-*
 *.box
 *.tar
 /iso/*
-/hyper-v-output/*
-!/hyper-v-output/Virtual Machines/vm.xml
-!/hyper-v-output/metadata.json
+/output-hyper-v/*
+!/output-hyper-v/Virtual Machines/vm.xml
+!/output-hyper-v/metadata.json
 !/iso/README.md
